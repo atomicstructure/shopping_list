@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:shopping_list/data/dummy_items.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shopping_list/data/dummy_items.dart';
 
 class GroceryList extends StatelessWidget {
   const GroceryList({super.key});
-
-  // void _addItem() {}
 
   @override
   Widget build(BuildContext context) {
@@ -14,10 +12,11 @@ class GroceryList extends StatelessWidget {
         title: const Text('Your Groceries'),
         actions: [
           IconButton(
-              onPressed: () {
-                context.goNamed('/home');
-              },
-              icon: const Icon(Icons.add))
+            onPressed: () => context.goNamed(
+              'addpage',
+            ),
+            icon: const Icon(Icons.add),
+          ),
         ],
       ),
       body: ListView.builder(
