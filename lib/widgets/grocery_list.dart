@@ -31,11 +31,7 @@ class _GroceryListState extends State<GroceryList> {
 
     try {
       final response = await http.get(url);
-      if (response.statusCode >= 400) {
-        setState(() {
-          _error = 'Failed to fetch data. Please try again in some minutes!';
-        });
-      }
+      if (response.statusCode >= 400) {}
 
       if (response.body == 'null') {
         setState(() {
@@ -65,7 +61,7 @@ class _GroceryListState extends State<GroceryList> {
       });
     } catch (err) {
       setState(() {
-        _error = 'Something went wrong! Please try again in some minutes!';
+        _error = 'Failed to fetch data. Please try again in some minutes!';
       });
     }
   }
